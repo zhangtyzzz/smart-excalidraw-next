@@ -2,24 +2,11 @@
 > **用自然语言，绘制专业图表**
 
 
-🚀🚀🚀全面升级的新版本，更强大好用的绘图工具
-
-https://smart-draw.aizhi.site
-
-🚀🚀🚀新版本github地址：
-
-https://github.com/liujuntao123/smart-draw
-
 
 一图介绍
 
 <img width="2816" height="1536" alt="Gemini_Generated_Image_2drs882drs882drs" src="https://github.com/user-attachments/assets/42d7a2ec-b56b-420c-becb-c598179d4541" />
 
-
-
-🚀 限时福利
-
-添加底部作者微信进群可领取免费claude-4.5-sonnet key
 
 ## English Version
 Read the English version: [README_EN.md](README_EN.md)
@@ -165,32 +152,3 @@ Next.js 16 · React 19 · Excalidraw · Tailwind CSS 4 · Monaco Editor
 ## 📄 许可证
 
 MIT License
-
-## 联系作者
-微信号： liujuntaoljt
-
-<img width="200"  alt="微信图片_20251103110224_44_85" src="https://github.com/user-attachments/assets/6d8c4da2-af27-4213-b929-0d47fa51e9b5" />
-
-## 💖 赞助
-
-感谢以下赞助者对本项目的支持：
-
-<!-- 赞助者名单 -->
-- API中转站：[AI 网关｜插件世界](https://ai-router.plugins-world.cn)
-
-如果这个项目对你有帮助，欢迎通过以下方式支持：
-- ⭐ 给项目点个 Star
-- 💬 分享给更多需要的人
-- 💰 成为赞助者（联系作者微信）
-
-## 友情链接
-
-- https://github.com/ZhangQL2824/auto-drawio.git
-
----
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=liujuntao123/smart-excalidraw-next&type=date&legend=top-left)](https://www.star-history.com/#liujuntao123/smart-excalidraw-next&type=date&legend=top-left)
-
-**用自然语言，绘制专业图表** - 让可视化创作回归简单
