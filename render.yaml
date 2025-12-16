@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: smart-excalidraw-next
+    runtime: docker
+
+    # 如果你的 Dockerfile 不在根目录，才需要下面两项
+    # dockerfilePath: ./Dockerfile
+    # dockerContext: .
+
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "10000"
+
+      # ---- 可选：开启“访问密码 + 服务端统一 LLM 配置”模式 ----
+      # 不想走服务端统一配置就不要配这些（让用户前端自己填 baseUrl/apiKey）
+      - key: ACCESS_PASSWORD
+        sync: false
+      - key: SERVER_LLM_TYPE
+        sync: false
+      - key: SERVER_LLM_BASE_URL
+        sync: false
+      - key: SERVER_LLM_API_KEY
+        sync: false
+      - key: SERVER_LLM_MODEL
+        sync: false
+
+    healthCheckPath: /
+    # 可选：绑定自定义域名（也可以之后在 Render 控制台里加）
+    # domains:
+    #   - your-domain.com
