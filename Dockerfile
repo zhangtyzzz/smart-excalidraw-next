@@ -28,4 +28,4 @@ RUN npm i -g pnpm && pnpm install --prod --frozen-lockfile
 EXPOSE 10000
 
 # 把端口/host 透传给 next start（多数 Next 脚本都支持）
-CMD ["sh", "-c", "pnpm start -- -p ${PORT} -H 0.0.0.0"]
+CMD ["sh", "-c", "node_modules/.bin/next start -H 0.0.0.0 -p ${PORT}"]
