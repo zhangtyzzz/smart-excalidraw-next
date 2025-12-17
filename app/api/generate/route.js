@@ -8,7 +8,7 @@ import { SYSTEM_PROMPT, USER_PROMPT_TEMPLATE } from '@/lib/prompts';
  */
 export async function POST(request) {
   try {
-    const { config, userInput, chartType } = await request.json();
+    const { config, userInput, chartType, context, files, image } = await request.json();
     const accessPassword = request.headers.get('x-access-password');
 
     // Check if using server-side config with access password
@@ -40,9 +40,9 @@ export async function POST(request) {
           { status: 500 }
         );
       }
-    } else if (!config || !userInput) {
+    } else if (!config || (!userInput && (!files || files.length === 0) && !image)) {
       return NextResponse.json(
-        { error: 'Missing required parameters: config, userInput' },
+        { error: 'Missing required parameters: config, userInput (or files/image)' },
         { status: 400 }
       );
     }
@@ -51,22 +51,21 @@ export async function POST(request) {
     let userMessage;
 
     // Handle different input types
-    if (typeof userInput === 'object' && userInput.image) {
+    if (image) {
       // Image input with text and image data
-      const { text, image } = userInput;
       userMessage = {
         role: 'user',
-        content: USER_PROMPT_TEMPLATE(text, chartType),
+        content: USER_PROMPT_TEMPLATE(userInput, chartType, context, files),
         image: {
-          data: image.data,
-          mimeType: image.mimeType
+          data: image.split(',')[1], // Remove data URL prefix if present
+          mimeType: image.split(';')[0].split(':')[1] || 'image/png'
         }
       };
     } else {
       // Regular text input
       userMessage = {
         role: 'user',
-        content: USER_PROMPT_TEMPLATE(userInput, chartType)
+        content: USER_PROMPT_TEMPLATE(userInput, chartType, context, files)
       };
     }
 
